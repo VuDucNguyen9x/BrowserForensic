@@ -7,7 +7,7 @@ try:
     from Firefox_Forensic import *
 except ImportError:
     sys.exit(
-        "Could not find common_methods.py... download the full toolkit from https://github.com/VuDucNguyen9x/Forensic_Web_Browser")
+        "Could not find Chrome_Forensic.py and Firefox_Forensic... Please download the full toolkit from https://github.com/VuDucNguyen9x/BrowserForensic")
 
 print("""
     ############ A Python script to read web browser data #########

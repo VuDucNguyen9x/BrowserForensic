@@ -6,7 +6,7 @@ try:
     from common_methods import *
 except ImportError:
     sys.exit(
-        "Could not find common_methods.py... download the full toolkit from https://github.com/VuDucNguyen9x/Forensic_Web_Browser")
+        "Could not find common_methods.py... download the full toolkit from https://github.com/VuDucNguyen9x/BrowserForensic")
 
 def read_chrome_history(history_db, tm_min=0, tm_max=9**18, host=None):
     command = "SELECT urls.url, title, visit_time, last_visit_time, visit_count FROM urls, visits WHERE (urls.id = visits.id)" \

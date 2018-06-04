@@ -5,7 +5,7 @@ import sys, re, json
 try:
     from common_methods import *
 except ImportError:
-    sys.exit("Could not find common_methods.py... download the full toolkit from https://github.com/VuDucNguyen9x/Forensic_Web_Browser")
+    sys.exit("Could not find common_methods.py... download the full toolkit from https://github.com/VuDucNguyen9x/BrowserForensicr")
 
 
 def read_moz_cookies(cookies_db):
