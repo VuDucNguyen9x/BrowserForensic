@@ -13,4 +13,5 @@ pywin32: https://pypi.org/project/pywin32
 # Usage:
 python BrowserForensic.py -h at any time for help
 
-Thank to https://github.com/MonroCoury/Forensic-Tools
+# Thank
+Forensic-Tools: https://github.com/MonroCoury/Forensic-Tools
