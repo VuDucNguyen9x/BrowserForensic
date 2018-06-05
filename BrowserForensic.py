@@ -68,16 +68,16 @@ if options.target not in ("cookies", "history", "searches", "downloads", "logins
 db = options.db
 hd = options.host_domain
 
-if options.min:
-    min_time = time_encode(options.min)
-else:
-    min_time = 0
-if options.max:
-    max_time = time_encode(options.min)
-else:
-    max_time = 9 ** 18  # Chrome: 6357-04-24 10:14:56.999121 ; Firefox: 6726-04-24 10:14:56.999121
-
 if options.wb.lower() == "chrome":
+    if options.min:
+        min_time = time_encode("chrome", options.min)
+    else:
+        min_time = 0
+    if options.max:
+        max_time = time_encode("chrome", options.max)
+    else:
+        max_time = 9 ** 18  # Chrome: 6357-04-24 10:14:56.999121
+
     if options.target.lower() == "cookies":
         if not db:
             db = get_chrome_db("cookies")
@@ -99,6 +99,15 @@ if options.wb.lower() == "chrome":
             db = get_chrome_db("Login Data")
         read_chrome_logins(db, tm_min=min_time, tm_max=max_time, domain=hd)
 elif options.wb.lower() == "firefox":
+    if options.min:
+        min_time = time_encode("firefox", options.min)
+    else:
+        min_time = 0
+    if options.max:
+        max_time = time_encode("firefox", options.max)
+    else:
+        max_time = 9 ** 18  # Firefox: 6726-04-24 10:14:56.999121
+
     try:
         android = eval(options.droid)
     except Exception:

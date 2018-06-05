@@ -34,7 +34,7 @@ def get_chrome_db(db_file):
     else:
         string = plat_dict[platform.system()]
     for item in os.listdir(string):
-        if os.path.isdir(os.path.join(string, item)) and "Default" in item:
+        if os.path.isdir(os.path.join(string, item)) and "Profile 1" in item:
             if os.path.isfile(os.path.join(string, item, db_file)):
                 success = True
                 return os.path.join(string, item, db_file)

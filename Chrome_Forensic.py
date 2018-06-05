@@ -32,7 +32,7 @@ def read_chrome_history(history_db, tm_min=0, tm_max=9**18, host=None):
     saveResult(file_name, data)
 
 def read_chrome_searches(searches_db):
-    command = "SELECT lower_term, urls.url, title, visit_count FROM keyword_search_terms, urls WHERE (urls.id = keyword_search_terms.url_id)" \
+    command = "SELECT lower_term, urls.url, title, visit_count FROM keyword_search_terms, urls WHERE (urls.id = keyword_search_terms.url_id)"
 
     res = pull_from_db(searches_db, command)
     data = init_data("chrome_forensic Searches", len(res)) + init_table_header(

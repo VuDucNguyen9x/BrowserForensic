@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import sys, re, json
+import json
 
 try:
     from common_methods import *
@@ -19,7 +19,7 @@ def read_moz_cookies(cookies_db):
 
     for row in res:
         creation_date = time_decode("firefox", row[7])
-        exp_date = time_decode(row[5])
+        exp_date = time_decode("firefox", row[5])
         last_access_date = time_decode("firefox", row[6])
         if bool(row[8]) == 0:
             Secure = 'No'
@@ -134,9 +134,9 @@ def read_moz_logins(logins_db):
         passwordField = l.get("passwordField")
         encryptedUsername = l.get("encryptedUsername")
         encryptedPassword = l.get("encryptedPassword")
-        create_date = time_decode(int(l.get("timeCreated")))
-        lastuse_date = time_decode(int(l.get("timeLastUsed")))
-        change_date = time_decode(int(l.get("timePasswordChanged")))
+        create_date = time_decode("firefox", int(l.get("timeCreated")))
+        lastuse_date = time_decode("firefox", int(l.get("timeLastUsed")))
+        change_date = time_decode("firefox", int(l.get("timePasswordChanged")))
         timesUsed = l.get("timesUsed")
         line = "<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>" \
                % (hostname, usernameField, passwordField, encryptedUsername, encryptedPassword, create_date, lastuse_date, change_date, timesUsed)
